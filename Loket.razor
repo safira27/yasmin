@@ -1,0 +1,95 @@
+﻿@page "/Loket"
+
+
+<div class="background-image" style="width:100%; height:600px; margin-top:15px;">
+    <MudImage Src="images/logo.png" Alt="Mony the dog" Elevation="25" style="width:80px; height:40px; margin:5px; padding:5px;" />
+
+   
+        <MudText style="margin:10px; padding:10px; margin-bottom:70px; with:60px; float:right; background-color:white; color:black;">01:02:59</MudText>
+  
+
+    <MudCardContent>
+
+        
+            <div class="background-image2" style="width:40%; height:10%; margin-left:250px; text-align:center; color:black; text-size-adjust:15px;">
+               
+            
+           
+                <MudText Style="font-size:30px; ">
+                LOKET ANTRIAN <br /> RUMAH SAKIT YASMIN
+
+                
+
+               
+                </MudText>
+            </div>
+
+
+        <MudGrid Spacing="@spacing" Justify="Justify.Center" Style="margin-top:15px;">
+            <MudItem >
+                <MudPaper Height="180px" Width="180px" Style="background-color:green; text-align:center; color:white; ">
+                    <h6 style="margin-top:5px;">
+                        PESERTA NON BPJS
+                    </h6>
+                    <button style="width:20px; height:10px; background-color:green; margin-right:100px; margin-top:60px; font-size:70px; " @onclick="IncrementCount">@currentCount
+                    </button>
+                   
+                    <MudImage Src="images/1.png" Alt="Mony the dog" Elevation="25" style="width:80px; height:80px; margin-bottom:500px; margin-left:80px;" />
+                    
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper Height="180px" Width="180px" Style="background-color:dodgerblue; text-align:center; color:white; ">
+                    <h6 style="margin-top:5px;">
+                        PESERTA BPJS
+                    </h6>
+                    <button style="width:20px; height:10px; background-color:dodgerblue; margin-right:100px; margin-top:60px; font-size:70px; " @onclick="IncrementCount">
+                        @currentCount
+
+                    </button>
+
+                    <MudImage Src="images/bpjs.png" Alt="Mony the dog" Elevation="25" style="width:80px; height:80px; margin-bottom:500px; margin-left:80px;" />
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+
+        <MudGrid Spacing="@spacing" Justify="Justify.Center" Style="margin-top:15px;">
+            <MudItem>
+                <MudPaper Height="180px" Width="180px" Style="background-color:darkred; text-align:center; color:white;">
+                    <h6 style="margin-top:5px;">
+                        PENDAFTARAN MANDIRI
+                    </h6>
+                    <MudImage Src="images/inpus.png" Alt="Mony the dog" Elevation="25" style="width:100px; height:120px; margin-bottom:20px;" />
+
+                </MudPaper>
+            </MudItem>
+            <MudItem >
+                <MudPaper Height="180px" Width="180px"  Style="background-color:darkblue; text-align:center; color:white;">
+                    <h6 style="margin-top:5px;">
+                        CETAK KODE BOOKING
+                    </h6>
+                    <MudImage Src="images/booking.png" Alt="Mony the dog" Elevation="25" style="width:100px; height:120px; margin-top:15px;" />
+
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+    </MudCardContent>
+</div>
+@code {
+    public int spacing { get; set; } = 2;
+}
+@code {
+    private int currentCount = 8;
+
+    private void IncrementCount()
+    {
+        currentCount = currentCount + 2;
+        currentCount = currentCount - 1;
+        currentCount = currentCount * 3;
+
+        Console.WriteLine("button clicked with modified value: " + currentCount);
+    }
+}
+
+
+
